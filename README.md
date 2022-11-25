@@ -20,6 +20,10 @@ To execute the actions proposed in terraform files
 ```
 terraform apply
 ```
+This is the output of terraform apply:
+
+![20221124_182751](https://user-images.githubusercontent.com/55506518/203888308-0615fa2d-df5d-4cef-bf36-3dff7fab2a1c.png)
+
 
 To destroy all the resources managed by terraform
 ```
@@ -64,10 +68,20 @@ You can check the connection from MongoDB Compass </br>
 
 ### Step 3: How to Test Bastion Server
 1. Go to Digital Ocean account to find ip address
-2. 
+2. Add ssh key which below commands. After you add them, you don't need to us -i option for ssh connection
 ```
 eval $(ssh-agent)
-ssh-add <path to private key in localhost>
-ssh -A root@<publicIP of bastion server>
-ssh root@<privateIP of web server>
+ssh-add path-to-private-key
 ```
+3. Connect to bastion server by ssh
+```
+ssh -A root@bastion-public-ip
+# you should now be connected to the bastion server.
+ssh root@server-private-ip
+# you should now be connected to one of your servers
+# you can print private ips as output in terraform,
+# or look at the DO web console. 
+```
+![20221124_185450](https://user-images.githubusercontent.com/55506518/203891599-24f12d08-8c1a-43f7-9e02-262ad3af9f47.png)
+
+![20221124_185513](https://user-images.githubusercontent.com/55506518/203891623-f9e92636-6bc2-42ff-94df-da573296cd19.png)
