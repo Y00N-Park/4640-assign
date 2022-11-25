@@ -57,7 +57,7 @@ source .env
 ### Step 2: How to Connect Database(MongoDB)
 1. Install <a href="http://mongodb.com/try/download/shell" target="_blank">MongoDB Compass Download</a> on your local machine </br>
 2. Find the database password from terraform.tfstate </br>
-3. Go to Digital Ocean account to copy the database connection string paste them to connect the database </br>
+3. Go to Digital Ocean account to copy the database connection string and paste them to connect the database </br>
 
 ![20221124_11545](https://user-images.githubusercontent.com/55506518/203873531-930447af-f273-4a48-98e8-5046eff84849.png)
 </br>
